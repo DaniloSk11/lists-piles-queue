@@ -41,14 +41,31 @@ public class List {
         if (position > listSize) {
             //criar uma nova exception pra tamanho a lista
         }
-
-        Node current = firstNode;
-        int loop = 0;
-        while (loop != position) {
-            current = current.nodePointer;
-        }
-
         
+        Node current = firstNode;
+
+        Node previousNode = null;
+        Node insertedNode = null;
+        Node nextNode;
+        
+
+
+        int check = 1;
+        while (current.nodePointer != null) {
+            
+            if (check == position -1) {
+              
+            }
+            if (check == position) {
+                insertedNode = current;
+            }
+            if (check == position +1) {
+                nextNode = current;
+            }
+            current = current.nodePointer;
+            check++;
+        }
+      
     }
     //end of the insert methods
 
