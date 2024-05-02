@@ -1,0 +1,10 @@
+-criar a lista ao iniciar o programa
+    -> a lista será feita de numeros inteiros distintos
+-mostrar o menu e deixar ele funcional
+    -> as opções são:
+        1- inserir novo elemento
+            1.1- inserir no inicio no fim ou posição1
+        2- remover elemento 
+            2.1- remover do inicio,final,valor ou posição
+        3- buscar elemento
+
