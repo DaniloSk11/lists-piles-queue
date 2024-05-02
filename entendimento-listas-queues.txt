@@ -1,5 +1,11 @@
 -criar a lista ao iniciar o programa
     -> a lista será feita de numeros inteiros distintos
+    -> a lista é uma Singly Linked List ou uma Lista Simplesmente Encadeadas
+        Uma SLL é uma lista composta por nodes uma estrutura auto-referencial que
+        contem uma referência para outra estrutura do mesmo tipo,
+        cada node tem 2 "elementos" um é o dado e o outro é a referência para o 
+        próximo node até a referência ser null.
+
 -mostrar o menu e deixar ele funcional
     -> as opções são:
         1- inserir novo elemento
@@ -8,3 +14,37 @@
             2.1- remover do inicio,final,valor ou posição
         3- buscar elemento
 
+detalhamento dos metodos que faltam ser implementados na classe lista
+
+    -> buscar elemento (object elemeto) [boolean]: o metodo deverá ler um elemento e 
+    pesquisar na estrutura de dados se o valor existe nela retornando true caso exista e
+    false caso não;
+        >- criar uma variavel com o object armazenado, percorrer com um 
+        while(obj atual != null) e armazenar o próximo objeto
+            
+
+    -> inserir por posição (object elemento, int posição) [void]: insere o elemento na
+    posição escolhida
+
+    -> remover por posição (object elemento, int posição) [object]: remove o elemento da
+    posição escolhida
+
+    ->remover por valor (object elemento) [object]: remove o elemento especificado caso
+    não esteja na lista retorna null
+
+classes e metodos:
+
+class Lista{
+    a classe lista manipula e armazena objetos do tipo NoLista
+
+    metodo inserir(int valor)[void]{
+        insere o valor no começo da lista 
+        para fazer essa inserção é verificado se a lista está vazia se estiver é criado
+        um novo node, se não é criado um novo nó e o inicio da lista é atualizado
+    }
+    metodo inserir no fim(int valor)[void]{
+        insere o valor no fim da fila
+        para fazer essa insersão é verificado a referencia do node se ela retornar 
+        null é removida a referencia null e é adicionado o novo node
+    }
+}
