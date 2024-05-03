@@ -1,5 +1,7 @@
 package main;
 
+import exceptions.EmptyListException;
+
 public class Pile extends List {
     public Pile(){
         super("stack - pile");

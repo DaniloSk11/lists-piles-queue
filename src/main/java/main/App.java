@@ -2,6 +2,10 @@ package main;
 
 import java.util.Scanner;
 
+import exceptions.EmptyListException;
+import exceptions.InvalidObjectException;
+import exceptions.InvalidPositionException;
+
 /**
  * Hello world!
  *
@@ -9,14 +13,17 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws EmptyListException, InvalidPositionException, InvalidObjectException {
         Scanner read = new Scanner(System.in);
-        Object option = null;
-        Object sair = 0;
+        MenuManager menu = new MenuManager();
+        Integer option = null;
+        Integer sair = 0;
+        List list = new List();
+        
         while (option != sair) {
-            //gerar o menu
-            option = read.nextLine();
+            menu.printMenu(option, list);
+            option = read.nextInt();
             //enviar a resposta pra o menu
         }
-
+        read.close();
     }
 }
 // teste de commit
