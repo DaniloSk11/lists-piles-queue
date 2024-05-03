@@ -1,5 +1,9 @@
 package main;
 
+import exceptions.EmptyListException;
+import exceptions.InvalidObjectException;
+import exceptions.InvalidPositionException;
+
 public class List {
     private Node firstNode;
     private Node lastNode;
@@ -34,6 +38,7 @@ public class List {
         } else {
             lastNode = lastNode.nodePointer = new Node(insertObject);
         }
+        this.listSize++;
     }
 
     public void insertNodePosition(Object object, int position) throws EmptyListException, InvalidPositionException {
@@ -185,7 +190,7 @@ public class List {
         return firstNode == null;
     }
 
-    public boolean isInvalidPosition(int position) {
+    private boolean isInvalidPosition(int position) {
         return position <= 0 || position > listSize;
     }
     public String isInList(Object object){
@@ -219,7 +224,7 @@ public class List {
     }
     
     public String printSize() {
-        return "List Size: " + this.listSize;
+        return "List Size: " + this.listSize+"\n";
     }
     
     // print mehods end
@@ -234,5 +239,6 @@ public class List {
         }
         return false;
     }
+
 
 }
