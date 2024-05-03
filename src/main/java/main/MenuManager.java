@@ -9,22 +9,26 @@ public class MenuManager {
     public String manageOption(Object option){
         if (currentMenu == "insertMenu") {
             
-        }if(currentMenu == "removeMenu"){
-
         }
-        
-        return option1(option);
-        
+        return optionNull(option);    
     }   
 
     ////(1) Inserir Novo Elemento; (2) Remover Elemento; (3) Buscar Elemento; (4) Imprimir elementos (0) Sair.
     //1- (1) – Inserir no Inicio; (2) – Inserir no Fim; (3) – Inserir Por posição
     //2- (1) – Remover no Inicio; (2) – Remover no Fim; (3) – Remover por Valor (leia o object a ser removido); (4) – Remover por Posição.
     
+    public String optionNull(Object option){
+        if (option == null) {
+            currentMenu = "mainMenu";
+            return "(1) Inserir Novo Elemento; (2) Remover Elemento; (3) Buscar Elemento; (4) Imprimir elementos (0) Sair.";
+        }
+        return option1(option);
+    }
+
     public String option1(Object option){
         if (option == "1") {
             currentMenu = "insertMenu";
-            return "Menu1";     
+            return "(1) – Inserir no Inicio; (2) – Inserir no Fim; (3) – Inserir Por posição.";     
         }
         else{
             return option2(option);
