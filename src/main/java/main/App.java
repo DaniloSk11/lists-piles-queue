@@ -7,8 +7,11 @@ import exceptions.InvalidObjectException;
 import exceptions.InvalidPositionException;
 
 /**
- * Hello world!
- *
+Faculdade: SENAI FATESG
+Trabalho da materia: Estrutura de Dados I
+Professor: Luiz Mario Barbosa
+Aluno: Danilo Silva da Cunha
+Finalizado: 03/05/2024
  */
 public class App {
     public static void main(String[] args) throws EmptyListException, InvalidPositionException, InvalidObjectException {
@@ -21,9 +24,8 @@ public class App {
         while (option != sair) {
             menu.printMenu(option, list);
             option = read.nextInt();
-            //enviar a resposta pra o menu
+
         }
         read.close();
     }
 }
-// teste de commit

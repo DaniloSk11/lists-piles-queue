@@ -22,10 +22,6 @@ public class MenuManager {
         }
         return optionNull(option,list);    
     }   
-
-    ////(1) Inserir Novo Elemento; (2) Remover Elemento; (3) Buscar Elemento; (4) Imprimir elementos (0) Sair.
-    //1- (1) – Inserir no Inicio; (2) – Inserir no Fim; (3) – Inserir Por posição
-    //2- (1) -> Remover no Inicio; (2) -> Remover no Fim; (3) -> Remover por Valor; (4) -> Remover por Posição.
     
     public String optionNull(Integer option, List list){
         if (option == null) {
@@ -60,9 +56,9 @@ public class MenuManager {
         if (option == 3) {
             System.out.println("Qual o valor a ser pesquisado: ");
             Object data = read.nextLine();
-            list.isInList(data);
+            
             option = null;
-            return optionNull(option, list);     
+            return list.isInList(data) + optionNull(option, list);     
         }
         else{
             return option4(option,list);
@@ -112,19 +108,31 @@ public class MenuManager {
     public String insertOp1(Integer option, List list){
         System.out.println("Insert data: ");
         Object data = read.nextLine();
-        list.insertNodeStart(data);
-        return "Data Inserted on the first position!\n" + optionNull(option,list);
+        if (list.searchObject(data)) {
+            return list.isInList(data) + optionNull(option, list);
+            
+        }else{
+            list.insertNodeStart(data);
+            return "Data Inserted on the first position!\n" + optionNull(option,list);
+        }
+        
     }
 
     public String insertOp2(Integer option, List list){
         System.out.println("Insert data: ");
         Object data = read.nextLine();
+        if (list.searchObject(data)) {
+            return list.isInList(data) + optionNull(option, list);
+        }
         list.insertNodeEnd(data);
         return "Data Inserted on the last position!\n" + optionNull(option,list);
     }
     public String insertOp3(Integer option, List list) throws EmptyListException, InvalidPositionException{
         System.out.println("Insert data: ");
-        Object data = read.nextLine();
+        Object data = read.next();
+        if (list.searchObject(data)) {
+            return list.isInList(data) + optionNull(option, list);
+        }
         System.out.println("Insert position: ");
         int position = read.nextInt();
         list.insertNodePosition(data,position);
@@ -158,8 +166,6 @@ public class MenuManager {
             return invalidOption(option, list);
         }
     }
-
-    //2- (1) -> Remover no Inicio; (2) -> Remover no Fim; (3) -> Remover por Valor; (4) -> Remover por Posição.
 
     public String removeOp1(Object option, List list) throws EmptyListException{
         list.removeNodeStart();

@@ -176,10 +176,7 @@ public class List {
         
         
         
-    }
-    
-
-    
+    }  
     // end of remove methods
 
 
@@ -195,9 +192,9 @@ public class List {
     }
     public String isInList(Object object){
         if (searchObject(object)) {
-            return "Object "+object+" is on the list!!";
+            return "Object "+object+" is on the list!!\n";
         }else{
-            return "Object "+object+" is not on the list!!";
+            return "Object "+object+" is not on the list!!\n";
         }
     }
     // is methods end
@@ -232,7 +229,7 @@ public class List {
     public boolean searchObject(Object object) {
         Node current = firstNode;
         while (current != null) {
-            if (current.data == object) {
+            if (current.data.equals(object)) {
                 return true;
             }
             current = current.nodePointer;
